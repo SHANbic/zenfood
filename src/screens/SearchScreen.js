@@ -10,7 +10,7 @@ const SearchScreen = () => {
   const filterResultsByPrice = price => {
     return results.filter(result => result.price === price);
   };
-
+  console.log('RESULTS',results[0])
   return (
     <View>
       <SearchBar
@@ -18,11 +18,10 @@ const SearchScreen = () => {
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
-      <Text>found {results.length} results</Text>
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <ResultsList results={filterResultsByPrice('€')} title="cost effective" />
-      <ResultsList results={filterResultsByPrice('€€')} title="bit pricier" />
-      <ResultsList results={filterResultsByPrice('€€€')} title="big spender" />
+      <ResultsList results={filterResultsByPrice('€')} title="Fin de mois" />
+      <ResultsList results={filterResultsByPrice('€€')} title="Entre amis" />
+      <ResultsList results={filterResultsByPrice('€€€')} title="Le grand jeu" />
     </View>
   );
 };

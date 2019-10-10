@@ -15,12 +15,12 @@ export default () => {
       });
       setResults(response.data.businesses);
     } catch (e) {
-      setErrorMessage("Couldn't fetch your datas");
+      setErrorMessage("Impossible de récupérer les données");
     }
   };
 
   useEffect(() => {
-    searchApi('sushi');
+    searchApi('');
   }, []);
 
   return [searchApi, results, errorMessage];
