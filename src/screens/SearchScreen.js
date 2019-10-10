@@ -12,7 +12,7 @@ const SearchScreen = () => {
   };
   console.log('RESULTS', results[0]);
   return (
-    <View style={{flex: 1}}>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
@@ -27,7 +27,7 @@ const SearchScreen = () => {
           title="Le grand jeu"
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 
