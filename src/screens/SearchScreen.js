@@ -12,17 +12,22 @@ const SearchScreen = () => {
   };
   console.log('RESULTS', results[0]);
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={{flex: 1}}>
       <SearchBar
         term={term}
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <ResultsList results={filterResultsByPrice('€')} title="Fin de mois" />
-      <ResultsList results={filterResultsByPrice('€€')} title="Entre amis" />
-      <ResultsList results={filterResultsByPrice('€€€')} title="Le grand jeu" />
-    </ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ResultsList results={filterResultsByPrice('€')} title="Fin de mois" />
+        <ResultsList results={filterResultsByPrice('€€')} title="Entre amis" />
+        <ResultsList
+          results={filterResultsByPrice('€€€')}
+          title="Le grand jeu"
+        />
+      </ScrollView>
+    </View>
   );
 };
 
