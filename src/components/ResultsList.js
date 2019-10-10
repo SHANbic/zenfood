@@ -10,6 +10,9 @@ import { withNavigation } from 'react-navigation';
 import ResultDetail from './ResultDetail';
 
 const ResultsList = ({ title, results, navigation }) => {
+  if (!results.length) {
+    return null;
+  }
   return (
     <View style={styles.list}>
       <Text style={styles.titleStyle}>{title}</Text>
