@@ -10,7 +10,7 @@ const SearchScreen = () => {
   const filterResultsByPrice = price => {
     return results.filter(result => result.price === price);
   };
-  console.log('RESULTS',results[0])
+  console.log('RESULTS', results[0]);
   return (
     <View>
       <SearchBar
